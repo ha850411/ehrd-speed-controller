@@ -20,7 +20,9 @@ chrome.webRequest.onCompleted.addListener(
     },
     {
         types: ["main_frame"],
-        urls: ["<all_urls>"]
+        urls: [
+            "*://ehrd.104.com.tw/cltcms/play-index-home.do*"
+        ]
     },
     ['responseHeaders']
 );
