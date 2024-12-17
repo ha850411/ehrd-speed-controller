@@ -4,11 +4,8 @@
     "version": "1.0",
     "description": "Control video playback speed on specific URL.",
     "permissions": [
-        "activeTab",
         "storage",
-        "scripting",
-        "webRequest",
-        "webRequestBlocking"
+        "webRequest"
     ],
     "background": {
         "service_worker": "background.js"
