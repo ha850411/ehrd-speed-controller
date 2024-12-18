@@ -5,7 +5,8 @@
     "description": "Control video playback speed on specific URL.",
     "permissions": [
         "storage",
-        "webRequest"
+        "webRequest",
+        "scripting"
     ],
     "background": {
         "service_worker": "background.js"
@@ -24,11 +25,14 @@
         "128": "icon.png"
     },
     "host_permissions": [
-        "*://ehrd.104.com.tw/cltcms/play-index-home.do*"
+        "*://ehrd.104.com.tw/cltcms/play-index-home.do*",
+        "*://ehrms.104.com.tw/*"
     ],
     "content_scripts": [
         {
-            "matches": ["*://ehrd.104.com.tw/cltcms/play-index-home.do*"],
+            "matches": [
+                "*://ehrd.104.com.tw/cltcms/play-index-home.do*"
+            ],
             "js": ["content.js"]
         }
     ]

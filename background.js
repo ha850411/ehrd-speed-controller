@@ -26,3 +26,20 @@ chrome.webRequest.onCompleted.addListener(
     },
     ['responseHeaders']
 );
+
+// ehrms.104.com.tw 加載完成時設置特定元素的值
+chrome.webRequest.onCompleted.addListener(
+    function(details) {
+        chrome.scripting.executeScript({
+            target: { tabId: details.tabId },
+            func: () => {
+                document.querySelector('#OVERTIME_EXCHANGE_DropDownList1').value = 0;
+            }
+        });
+    },
+    {
+        types: ["main_frame"],
+        urls: ["*://ehrms.104.com.tw/*"]
+    },
+    ['responseHeaders']
+);
